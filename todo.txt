@@ -1,3 +1,8 @@
 Spikes
 - Setup AWS http://aws.amazon.com/
 - Setup MUP https://book.discovermeteor.com/chapter/deploying
+
+Checkout
+- Inclusions (partials)
+- Expressions
+- Block Helpers
