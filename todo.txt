@@ -13,6 +13,7 @@ UNDERSTAND - http://docs.meteor.com/#/full/sevenprinciples
 - Database Everywhere
 - Data on the Wire
 - Latency Compensation
+- Reactivity
 
 
 Remember
