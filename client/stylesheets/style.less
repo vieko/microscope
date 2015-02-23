@@ -26,7 +26,7 @@ body {
 }
 
 #main {
-  position: absolute;
+  position: relative;
 }
 
 .page {
@@ -53,11 +53,11 @@ body {
   position: relative;
   &:before,
   &:after {
-    clear: both;
-  }
-  &:after {
     content: '';
     display: table;
+  }
+  &:after {
+    clear: both;
   }
   &.invisible {
     opacity: 0;
