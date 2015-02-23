@@ -7,6 +7,13 @@ Checkout
 - Expressions
 - Block Helpers (not Routers) (Logic)
 - Collections
+- Publication / Subscription (Distributed Data Protocol)
+
+UNDERSTAND - http://docs.meteor.com/#/full/sevenprinciples
+- Database Everywhere
+- Data on the Wire
+- Latency Compensation
+
 
 Remember
 - var keyword limits the scope of an object to current file
