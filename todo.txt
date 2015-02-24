@@ -14,6 +14,8 @@ UNDERSTAND - http://docs.meteor.com/#/full/sevenprinciples
 - Data on the Wire
 - Latency Compensation
 - Reactivity
+- Declarative Approach
+- Computations
 
 
 Remember
