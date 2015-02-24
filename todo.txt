@@ -18,6 +18,7 @@ UNDERSTAND - http://docs.meteor.com/#/full/sevenprinciples
 - Computations
 - Abstraction & Security
 - App-Level Error & Code-Level Error
+- Denormalization
 
 
 Remember

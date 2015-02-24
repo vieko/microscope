@@ -18,7 +18,8 @@ if (Posts.find().count() === 0) {
     userId: admin._id,
     author: admin.profile.name,
     url: 'http://legrudgerugged.com/',
-    submitted: new Date(now - 7 * 3600 * 1000)
+    submitted: new Date(now - 7 * 3600 * 1000),
+    commentsCount: 2
   });
 
   Comments.insert({
@@ -42,7 +43,8 @@ if (Posts.find().count() === 0) {
     userId: andro._id,
     author: andro.profile.name,
     url: 'http://www.skystone.ca/',
-    submitted: new Date(now - 10 * 3600 * 1000)
+    submitted: new Date(now - 10 * 3600 * 1000),
+    commentsCount: 0
   });
 
   Posts.insert({
@@ -50,6 +52,7 @@ if (Posts.find().count() === 0) {
     userId: admin._id,
     author: admin.profile.name,
     url: 'http://www.krunchgame.com/',
-    submitted: new Date(now - 12 * 3600 * 1000)
+    submitted: new Date(now - 12 * 3600 * 1000),
+    commentsCount: 0
   });
 }
