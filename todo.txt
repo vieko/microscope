@@ -16,6 +16,8 @@ UNDERSTAND - http://docs.meteor.com/#/full/sevenprinciples
 - Reactivity
 - Declarative Approach
 - Computations
+- Abstraction & Security
+- App-Level Error & Code-Level Error
 
 
 Remember
