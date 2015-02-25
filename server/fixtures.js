@@ -5,7 +5,7 @@ if (Posts.find().count() === 0) {
 
   // CREATE: two users
   var adminId = Meteor.users.insert({
-    profile: { name: 'Adminstrator Maximus' }
+    profile: { name: 'Administrator Maximus' }
   });
   var admin = Meteor.users.findOne(adminId);
   var androId = Meteor.users.insert({
@@ -19,7 +19,9 @@ if (Posts.find().count() === 0) {
     author: admin.profile.name,
     url: 'http://legrudgerugged.com/',
     submitted: new Date(now - 7 * 3600 * 1000),
-    commentsCount: 2
+    commentsCount: 2,
+    upvoters: [],
+    votes: 0
   });
 
   Comments.insert({
@@ -44,7 +46,9 @@ if (Posts.find().count() === 0) {
     author: andro.profile.name,
     url: 'http://www.skystone.ca/',
     submitted: new Date(now - 10 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
 
   Posts.insert({
@@ -53,6 +57,21 @@ if (Posts.find().count() === 0) {
     author: admin.profile.name,
     url: 'http://www.krunchgame.com/',
     submitted: new Date(now - 12 * 3600 * 1000),
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [],
+    votes: 0
   });
+
+  for (var i = 0; i < 10; i++) {
+    Posts.insert({
+      title: 'Test post #' + i,
+      author: admin.profile.name,
+      userId: admin._id,
+      url: 'http://google.com/?q=test-' + i,
+      submitted: new Date(now - i * 3600 * 1000),
+      commentsCount: 0,
+      upvoters: [],
+      votes: 0
+    });
+  }
 }
