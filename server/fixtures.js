@@ -5,7 +5,7 @@ if (Posts.find().count() === 0) {
 
   // CREATE: two users
   var adminId = Meteor.users.insert({
-    profile: { name: 'Administrator Maximus' }
+    profile: { name: 'Jarto' }
   });
   var admin = Meteor.users.findOne(adminId);
   var androId = Meteor.users.insert({
@@ -30,7 +30,7 @@ if (Posts.find().count() === 0) {
     userId: andro._id,
     author: andro.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
-    body: 'derp derp derp derp commenting derp derp'
+    body: 'derpa derp derpster comments yar har'
   });
 
   Comments.insert({
@@ -38,13 +38,13 @@ if (Posts.find().count() === 0) {
     userId: admin._id,
     author: admin.profile.name,
     submitted: new Date(now - 3 * 3600 * 1000),
-    body: 'yar yar yar of course, yar yar derp yar'
+    body: 'yarter yars of course!'
   });
 
   Posts.insert({
     title: 'Skystone Website (current)',
-    userId: andro._id,
-    author: andro.profile.name,
+    userId: admin._id,
+    author: admin.profile.name,
     url: 'http://www.skystone.ca/',
     submitted: new Date(now - 10 * 3600 * 1000),
     commentsCount: 0,
@@ -54,7 +54,7 @@ if (Posts.find().count() === 0) {
   });
 
   Posts.insert({
-    title: 'KRUNCH',
+    title: 'KRUNCH now on Steam!',
     userId: admin._id,
     author: admin.profile.name,
     url: 'http://www.krunchgame.com/',
@@ -65,17 +65,17 @@ if (Posts.find().count() === 0) {
     clicks: 0
   });
 
-  for (var i = 0; i < 10; i++) {
-    Posts.insert({
-      title: 'Test post #' + i,
-      author: admin.profile.name,
-      userId: admin._id,
-      url: 'http://google.com/?q=test-' + i,
-      submitted: new Date(now - i * 3600 * 1000),
-      commentsCount: 0,
-      upvoters: [],
-      votes: 0,
-      clicks: 0
-    });
-  }
+  // for (var i = 0; i < 10; i++) {
+  //   Posts.insert({
+  //     title: 'Test post #' + i,
+  //     author: admin.profile.name,
+  //     userId: admin._id,
+  //     url: 'http://google.com/?q=test-' + i,
+  //     submitted: new Date(now - i * 3600 * 1000),
+  //     commentsCount: 0,
+  //     upvoters: [],
+  //     votes: 0,
+  //     clicks: 0
+  //   });
+  // }
 }
