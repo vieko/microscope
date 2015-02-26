@@ -47,3 +47,20 @@ Meteor.methods({
     return Bitly.getClicks(link);
   }
 });
+
+var callInterval = 10000; // 1000ms * 10 = 10s
+Meteor.setInterval(function () {
+  // GET: all posts with shortUrl property
+  var shortUrlPosts = Posts.find({shortUrl: {$exists: true}});
+  var postsNumber = shortUrlPosts.count();
+  // INIT: Counter
+  var count = 0;
+  shortUrlPosts.forEach(function (post) {
+    // CALCULATE: right delay to distribute API calls evenly throughout the interval
+    var callTimeout = Math.round(callInterval / postsNumber * count);
+    Meteor.setTimeout(function () {
+      Posts.update(post._id, {$set: {clicks: Bitly.getClicks(post.shortUrl)}});
+    }, callTimeout);
+    count++;
+  });
+}, callInterval);
